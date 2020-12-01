@@ -1,15 +1,24 @@
 html, body, #root {
     font: 0.9rem sans-serif;
-    background: #0a1f44;
+    background: white;
     color: #1e2432;
     height: 100%;
     margin: 0;
 }
 
+.main-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px 8%;
+    font-size: 3em;
+}
+
 .main-container {
     background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.418));
     background-size: cover;
-    background-image: url('https://www.cambridge.org/elt/blog/wp-content/uploads/2019/02/background-3268840_1920.jpg');
+    background-image: '';
     background-position: center;
 }
 
@@ -23,8 +32,10 @@ html, body, #root {
 
 .search {
     outline: none;
-    padding: 20px 7%;
+    padding: 15px 5%;
+    padding-left: 1%;
     border-radius: 20px;
+    font-size: large;
     border: none;
     margin-bottom: 5%;
     background: rgba(250, 250, 250, 0.85);

@@ -7,7 +7,22 @@ const App = () => {
     const [query, setQuery] = useState('');
     const [weather, setWeather] = useState({});
     const [gif, setGif] = useState('');
+    const [mainGif, setMainGif] = useState('');
     const [desc, setDesc] = useState('');
+    const [homePageSet, setHomePageBool] = useState(false);
+
+    if(!homePageSet){
+        getMainGif();
+        setHomePageBool(true);
+    }
+    
+    useEffect(() => {
+        if(mainGif && homePageSet){
+            const container = document.querySelector(".main-container");
+            container.style.backgroundImage = `url(${mainGif})`;
+            console.log("11111")
+        }
+    }, [mainGif, homePageSet])
 
     const search = async (e) => {
         if(e.key === 'Enter'){
@@ -19,11 +34,12 @@ const App = () => {
         }
     }
 
-
     useEffect(() => {
         if (gif) {
-            const container = document.querySelector(".main-container")
+            const container = document.querySelector(".main-container");
             container.style.backgroundImage = `url(${gif})`;
+            const welcomeContainer = document.querySelector(".main-header");
+            welcomeContainer.style.display='none';
         }
     }, [gif])
 
@@ -35,9 +51,24 @@ const App = () => {
             console.log(data);
             const {data: gifs} = await resJson.json();
             const gifCount = gifs.length;
-            const randomIdx = Math.floor(Math.random() * gifCount)
+            const randomIdx = Math.floor(Math.random() * gifCount);
             const gifUrl = gifs[randomIdx].images.downsized.url;
             setGif(gifUrl)
+          } catch (error) {
+            console.warn(error);
+          }
+    }
+
+    async function getMainGif(){
+        try{
+            const API_KEY = 'knQTvFoOegije3rg120nn19uFAsS7tz4';
+            const BASE_URL = 'http://api.giphy.com/v1/gifs/search';
+            const resJson = await fetch(`${BASE_URL}?api_key=${API_KEY}&q=weather`);
+            const {data: gifs} = await resJson.json();
+            const gifCount = gifs.length;
+            const randomIdx = Math.floor(Math.random() * gifCount);
+            const gifUrl = gifs[randomIdx].images.downsized.url;
+            setMainGif(gifUrl);
           } catch (error) {
             console.warn(error);
           }
@@ -52,10 +83,10 @@ const App = () => {
                 "Forecast is showing "+ weatherType + " for today!",
                 "Get ready for " + weatherType + "!",
             ];
-            const sentenceLength = sentence.length
+            const sentenceLength = sentence.length;
             const randNum = Math.floor(Math.random() * sentenceLength);
-            const weatherDesc = sentence[randNum] 
-            setDesc(weatherDesc)
+            const weatherDesc = sentence[randNum];
+            setDesc(weatherDesc);
         }
         catch (error){
             console.warn(error);
@@ -63,8 +94,12 @@ const App = () => {
     }
 
     return (
-        <div className="main-container" >
-            <input type="text" className="search" placeholder="Search..." value={query} onChange={(e) => setQuery(e.target.value)} onKeyPress={search} />
+        <div className="main-container">
+            <div className="main-header">
+                <h2>Welcome to Temp-er.</h2>
+                <h3>Search for a city below!</h3>
+            </div>
+            <input type="text" className="search" placeholder="Wellington, NZ" value={query} onChange={(e) => setQuery(e.target.value)} onKeyPress={search} />
             {weather.main && (
                 <div className="city">
                     <h2 className="city-name">
