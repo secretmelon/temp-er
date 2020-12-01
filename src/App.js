@@ -36,10 +36,10 @@ const App = () => {
 
     useEffect(() => {
         if (gif) {
-            const container = document.querySelector(".main-container");
-            container.style.backgroundImage = `url(${gif})`;
             const welcomeContainer = document.querySelector(".main-header");
             welcomeContainer.style.display='none';
+            const container = document.querySelector(".main-container");
+            container.style.backgroundImage = `url(${gif})`;
         }
     }, [gif])
 
