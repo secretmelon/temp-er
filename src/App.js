@@ -46,7 +46,7 @@ const App = () => {
     async function getGif(data){
         try{
             const API_KEY = 'knQTvFoOegije3rg120nn19uFAsS7tz4';
-            const BASE_URL = 'http://api.giphy.com/v1/gifs/search';
+            const BASE_URL = 'https://api.giphy.com/v1/gifs/search';
             const resJson = await fetch(`${BASE_URL}?api_key=${API_KEY}&q=${data.weather[0].description}`);
             console.log(data);
             const {data: gifs} = await resJson.json();
@@ -62,7 +62,7 @@ const App = () => {
     async function getMainGif(){
         try{
             const API_KEY = 'knQTvFoOegije3rg120nn19uFAsS7tz4';
-            const BASE_URL = 'http://api.giphy.com/v1/gifs/search';
+            const BASE_URL = 'https://api.giphy.com/v1/gifs/search';
             const resJson = await fetch(`${BASE_URL}?api_key=${API_KEY}&q=weather`);
             const {data: gifs} = await resJson.json();
             const gifCount = gifs.length;
