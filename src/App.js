@@ -10,7 +10,7 @@ const App = () => {
     const [mainGif, setMainGif] = useState('');
     const [desc, setDesc] = useState('');
     const [homePageSet, setHomePageBool] = useState(false);
-    const [surprised, setSurprise] = useState(false);
+    // const [surprised, setSurprise] = useState(false);
 
     // Only set up the landing page gif once
     if(!homePageSet){
@@ -70,20 +70,20 @@ const App = () => {
     }
 
     // Searches for random gif with term 'Weather' for landing page
-    async function getMainGif(){
-        try{
-            const API_KEY = 'knQTvFoOegije3rg120nn19uFAsS7tz4';
-            const BASE_URL = 'https://api.giphy.com/v1/gifs/search';
-            const resJson = await fetch(`${BASE_URL}?api_key=${API_KEY}&q=weather`);
-            const {data: gifs} = await resJson.json();
-            const gifCount = gifs.length;
-            const randomIdx = Math.floor(Math.random() * gifCount);
-            const gifUrl = gifs[randomIdx].images.downsized.url;
-            // setMainGif(gifUrl);
-          } catch (error) {
-            console.warn(error);
-          }
-    }
+    // async function getMainGif(){
+    //     try{
+    //         const API_KEY = 'knQTvFoOegije3rg120nn19uFAsS7tz4';
+    //         const BASE_URL = 'https://api.giphy.com/v1/gifs/search';
+    //         const resJson = await fetch(`${BASE_URL}?api_key=${API_KEY}&q=weather`);
+    //         const {data: gifs} = await resJson.json();
+    //         const gifCount = gifs.length;
+    //         const randomIdx = Math.floor(Math.random() * gifCount);
+    //         const gifUrl = gifs[randomIdx].images.downsized.url;
+    //         // setMainGif(gifUrl);
+    //       } catch (error) {
+    //         console.warn(error);
+    //       }
+    // }
 
     // Picks a random gif from an array of pre-selected gifs for landing page
     async function getMainGifArray(){
