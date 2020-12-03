@@ -6,6 +6,15 @@ html, body, #root {
     margin: 0;
 }
 
+input[type="text"]
+{
+    font-size:30px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+
 .main-header{
     display: flex;
     align-items: center;
@@ -16,6 +25,38 @@ html, body, #root {
     text-shadow: 2px 2px 8px black;
     font-size: 3em;
 }
+
+a:link, a:visited {
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgba(250, 250, 250, 0.4); /* Green */
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    border-radius: 50px;
+    display: inline-block;
+    font-size:20px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  a:hover, a:active {
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgba(250, 250, 250, 1); /* Green */
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    border-radius: 50px;
+    display: inline-block;
+    font-size:20px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+  }
 
 .main-container {
     background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.418));
@@ -35,13 +76,11 @@ html, body, #root {
 .search {
     outline: none;
     padding: 15px 5%;
-    padding-left: 1%;
-    border-radius: 20px;
-    font-size: large;
+    border-radius: 50px;
     border: none;
-    margin-bottom: 5%;
     background-color: white;
     box-shadow: 10px 10px 5px 0px rgba(15, 15, 15, 0.404);
+    font-size: xx-large;
 }
 
 .city {
@@ -49,10 +88,9 @@ html, body, #root {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 40px 8%;
-    border-radius: 20px;
+    padding: 20px 8%;
+    border-radius: 50px;
     background: rgba(250, 250, 250, 1);
-    box-shadow: 10px 10px 5px 0px rgba(15, 15, 15, 0.404);
 }
 
 p {
@@ -89,12 +127,23 @@ p {
     margin-top: 10px;
     width: 100px;
     height: 100px;
+    -webkit-filter: drop-shadow(5px 5px 5px #c7c7c7);
+    filter: drop-shadow(5px 5px 5px #c7c7c7);
 }
 
 .info {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 2em;
+}
+
+.back{
+    display: none;
+    margin-top: 20px;
+}
+
+.surprise{
 }
 
 @media only screen and (max-width: 600px) {
