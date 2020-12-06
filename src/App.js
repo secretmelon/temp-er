@@ -102,7 +102,6 @@ const App = () => {
                 'https://media.giphy.com/media/za5xikuRr0OzK/giphy.gif',
                 'https://media.giphy.com/media/26DN4DJqhltqNpT9K/giphy.gif',
                 'https://media.giphy.com/media/LGY967AFmrueY/giphy.gif'
-
                 ]
             const randNum = Math.floor(Math.random() * gifArray.length);
             const gifUrl = gifArray[randNum];
