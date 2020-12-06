@@ -1,5 +1,6 @@
 html, body, #root {
     font: 0.9rem sans-serif;
+    font-family: "Montserrat", sans-serif;
     background: white;
     color: #1e2432;
     height: 100%;
@@ -9,7 +10,7 @@ html, body, #root {
 input[type="text"]
 {
     font-size:30px;
-    font-family: sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: bold;
     text-align: center;
 }
@@ -37,7 +38,7 @@ a:link, a:visited {
     border-radius: 50px;
     display: inline-block;
     font-size:20px;
-    font-family: sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: bold;
     text-align: center;
   }
@@ -53,7 +54,7 @@ a:link, a:visited {
     border-radius: 50px;
     display: inline-block;
     font-size:20px;
-    font-family: sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: bold;
     text-align: center;
   }
